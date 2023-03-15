@@ -1,0 +1,18 @@
+% Parameters
+numNodes = 100;             % Number of sensor nodes
+numClusters = 10;           % Number of clusters (i.e., cluster heads)
+maxIterations = 100;        % Maximum number of iterations
+tolerance = 1e-6;           % Tolerance for convergence
+data = rand(numNodes, 2);   % Generate random sensor data
+
+% K-means clustering algorithm
+[clusterIndices, clusterHeads] = kmeans(data, numClusters, 'MaxIter', maxIterations, 'TolFun', tolerance);
+
+% Plot the results
+scatter(data(:,1), data(:,2), 10, clusterIndices, 'filled');
+hold on;
+scatter(clusterHeads(:,1), clusterHeads(:,2), 50, 'k', 'filled');
+title('Cluster Head Selection using K-means Clustering');
+xlabel('X-axis');
+ylabel('Y-axis');
+legend('Sensor Nodes', 'Cluster Heads');
