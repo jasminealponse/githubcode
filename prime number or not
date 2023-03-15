@@ -1,0 +1,12 @@
+a=int(input("enter any number"))
+if a>1:
+    for x in range(1,a):
+        if(a%x)==0:
+            print("entered numbers are not prime")
+            break
+        else:
+            print("entered numbers are prime")
+            break
+else:
+    print("entered numbers are not prime")
+        
